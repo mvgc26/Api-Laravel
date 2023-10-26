@@ -11,6 +11,7 @@ class CategoryController extends Controller
 {
     public function index ()
     {
+        // all, with
         return Category::all();
     }
 
