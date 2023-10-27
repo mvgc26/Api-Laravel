@@ -13,11 +13,11 @@ class TagController extends Controller
 {
     public function index ()
     {
-        return Tag::with("recipes")-> get() ;
+        return TagResource::collection(Tag::with("recipes")-> get()) ;
     }
 
     public function show (Tag $tag)
     {
-        return $tag->load ("recipes");
+        return new TagResource ($tag->load ("recipes"));
     }
 }
