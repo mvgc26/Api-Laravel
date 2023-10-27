@@ -14,12 +14,13 @@ class CategoryController extends Controller
     public function index ()
     {
         // all, with
-        return Category::all();
+        return CategoryResource::collection(Category::all());
     }
 
     public function show (Category $category)
     {
         $category = $category->load("recipes");
-        return new
+
+        return new CategoryResource($category);
     }
 }
