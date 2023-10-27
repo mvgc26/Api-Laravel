@@ -11,8 +11,8 @@ class RecipeController extends Controller
 {
     public function index ()
     {
-        //all, get
-        return Recipe:: with("category","tags","user")->get();
+
+        return Recipe:: select ("id", "title")->with("category","tags","user")->get();
     }
 
     public function store(){}
