@@ -19,6 +19,7 @@ class CategoryController extends Controller
 
     public function show (Category $category)
     {
-        return $category->load ("recipes");
+        $category = $category->load("recipes");
+        return new
     }
 }
