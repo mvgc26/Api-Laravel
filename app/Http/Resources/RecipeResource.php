@@ -16,12 +16,16 @@ class RecipeResource extends JsonResource
     {
         return [
             "id" => $this ->id,
-            "type" => "category",
+            "type" => "recipe",
             "attributes" => [
-                "name" => $this ->name,
-            ],
-            "relations" => [
-                "recipes" => $this->recipes
+                "category"         => $this ->category->name,
+                "author"           => $this ->user->name,
+                "title"            => $this ->title->name,
+                "description"      => $this ->description->name,
+                "ingredients"      => $this ->ingredients->name,
+                "instrucctions"    => $this ->instrucctions->name,
+                "image"            => $this ->title->image,
+                "tags"            => $this ->title->tags->pluck("name")->implode(","),
             ],
         ];
     }
