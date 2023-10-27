@@ -23,7 +23,7 @@ class RecipeResource extends JsonResource
                 "title"            => $this ->title->name,
                 "description"      => $this ->description->name,
                 "ingredients"      => $this ->ingredients->name,
-                "instrucctions"    => $this ->instrucctions->name,
+                "instructions"    => $this ->instructions->name,
                 "image"            => $this ->title->image,
                 "tags"            => $this ->title->tags->pluck("name")->implode(","),
             ],
