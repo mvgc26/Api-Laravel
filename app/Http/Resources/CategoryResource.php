@@ -21,7 +21,7 @@ class CategoryResource extends JsonResource
                 "name" => $this ->name,
             ],
             "relations" => [
-                "recipes" => $this->recipes
+                "recipes" => RecipeResource::collection($this->recipes)
             ],
         ];
     }
