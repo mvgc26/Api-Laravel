@@ -12,7 +12,7 @@ class RecipeController extends Controller
     public function index ()
     {
 
-        return Recipe:: select ("id", "title")->with("category","tags","user")->get();
+        return Recipe:: select ("id", "category_id", "user_id", "title")->with("category","tags","user")->get();
     }
 
     public function store(){}
