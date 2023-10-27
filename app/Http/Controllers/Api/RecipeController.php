@@ -13,8 +13,8 @@ class RecipeController extends Controller
 {
     public function index ()
     {
-
-        return Recipe::with("category","tags","user")->get();
+        $recipes = Recipe::with("category","tags","user")->get();
+        return RecipeResource::collection($recipes);
     }
 
     public function store(){}
