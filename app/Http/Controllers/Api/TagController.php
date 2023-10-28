@@ -13,7 +13,8 @@ class TagController extends Controller
 {
     public function index ()
     {
-        return TagResource::collection(Tag::with("recipes")-> get()) ;
+        $tags = Tag::with("recipes.category", "recipes.tags" , "recipes.users")-> get();
+        return TagResource::collection($tags);
     }
 
     public function show (Tag $tag)
