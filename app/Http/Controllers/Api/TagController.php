@@ -19,6 +19,7 @@ class TagController extends Controller
 
     public function show (Tag $tag)
     {
-        return new TagResource ($tag->load ("recipes"));
+        $tag = $tag->load ("recipes.category", "recipes.tags" , "recipes.users");
+        return new TagResource ($tag);
     }
 }
